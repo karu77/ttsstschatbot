@@ -132,6 +132,10 @@ resumeBtn.onclick = () => {
 statusDiv.classList.add('transition-all');
 
 function cleanTextForTTS(text) {
-  // Remove all characters except letters, numbers, spaces, and basic punctuation
-  return text.replace(/[^a-zA-Z0-9\s.,?!'-]/g, ' ').replace(/\s+/g, ' ').trim();
+  // Remove all asterisks (single or multiple), and all non-alphanumeric except basic punctuation
+  return text
+    .replace(/\*+/g, ' ') // Remove all asterisks (single or multiple)
+    .replace(/[^a-zA-Z0-9\s.,?!'-]/g, ' ') // Remove other symbols except basic punctuation
+    .replace(/\s+/g, ' ') // Replace multiple spaces with a single space
+    .trim();
 } 
