@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini Voice Chatbot</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col items-center min-h-screen">
+  <div id="chat" class="w-full max-w-md bg-white rounded shadow p-4 my-8 h-96 overflow-y-auto"></div>
+  <input id="textInput" type="text" placeholder="Type your message..." class="w-full max-w-md bg-white rounded shadow p-2 mb-2 mt-2" />
+  <button id="sendBtn" class="bg-green-500 text-white rounded p-2 mb-2">Send</button>
+  <select id="voiceSelect" class="w-full max-w-md bg-white rounded shadow p-2 mb-2 mt-2"></select>
+  <button id="micBtn" class="bg-blue-500 text-white rounded-full p-4 mt-2">🎤</button>
+  <div id="status" class="mt-2 text-gray-600"></div>
+  <div id="subtitles" class="mt-2 text-lg text-black"></div>
+  <script src="app.js"></script>
+</body>
+</html> 
