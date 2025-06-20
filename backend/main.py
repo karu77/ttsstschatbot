@@ -2,6 +2,9 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 import requests
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI()
 app.add_middleware(
@@ -11,7 +14,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyClxF-mDE_liUvEBrkc7hAUDrK_xR5h2ew")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent"
 
 @app.post("/chat")
