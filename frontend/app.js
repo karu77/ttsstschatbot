@@ -132,6 +132,6 @@ resumeBtn.onclick = () => {
 statusDiv.classList.add('transition-all');
 
 function cleanTextForTTS(text) {
-  // Remove common symbols, or replace with space
-  return text.replace(/[*@#^_`~]/g, ' ');
+  // Remove all characters except letters, numbers, spaces, and basic punctuation
+  return text.replace(/[^a-zA-Z0-9\s.,?!'-]/g, ' ').replace(/\s+/g, ' ').trim();
 } 
